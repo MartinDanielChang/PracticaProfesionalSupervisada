@@ -1,0 +1,127 @@
+body {
+    background: linear-gradient(to right, #0066cc, #ffcc00);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden; /* Evitar desplazamiento en pantallas pequeñas */
+}
+
+.login-container {
+    display: flex;
+    align-items: stretch; /* Hacer que los elementos abarquen toda la altura disponible */
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px; /* Ajustar el ancho máximo del contenedor */
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten en pantallas pequeñas */
+    gap: 40px; /* Espacio entre el cuadro de login y el mensaje de bienvenida */
+    height: 100%; /* Asegurar que el contenedor abarque todo el alto de la pantalla */
+}
+
+.login-card {
+    flex: 1; /* Ocupa el mismo espacio que el mensaje de bienvenida */
+    max-width: 350px; /* Limitar el ancho de la tarjeta */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    text-align: center;
+    margin-bottom: 30px; /* Margen inferior para pantallas pequeñas */
+    transform: translateY(20px); /* Iniciar más abajo para la animación */
+    opacity: 0; /* Iniciar invisible para la animación */
+    transition: transform 1s ease-out, opacity 1s ease-out; /* Animación suave */
+}
+
+.login-card.show {
+    transform: translateY(0); /* Regresar a la posición original */
+    opacity: 1; /* Hacer visible */
+}
+
+.login-card h2 {
+    margin-bottom: 30px;
+    font-weight: 600;
+    color: #003366; /* Azul oscuro */
+}
+
+.alert {
+    display: none;
+}
+
+.btn-primary {
+    background-color: #0066cc; /* Azul */
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    transition: background-color 0.3s ease;
+    color: white; /* Color de texto en el botón */
+}
+
+.btn-primary:hover {
+    background-color: #ffcc00; /* Amarillo */
+}
+
+.form-control {
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #003366; /* Azul oscuro */
+}
+
+.forgot-password {
+    margin-top: 20px;
+}
+
+.forgot-password a {
+    color: #0066cc; /* Azul */
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.welcome-message {
+    flex: 1; /* Que el mensaje de bienvenida también ocupe el mismo espacio que el login */
+    color: white; /* Cambiado a blanco */
+    max-width: 400px; /* Limitar el ancho del mensaje */
+    text-align: left; /* Alinear el texto a la izquierda */
+    margin-top: 40px; /* Aumentar margen superior para separar más el mensaje del logo */
+    transform: translateY(20px); /* Iniciar más abajo para la animación */
+    opacity: 0; /* Iniciar invisible para la animación */
+    transition: transform 1s ease-out, opacity 1s ease-out; /* Animación suave */
+}
+
+.welcome-message.show {
+    transform: translateY(0); /* Regresar a la posición original */
+    opacity: 1; /* Hacer visible */
+}
+
+.welcome-message h3 {
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 120px; /* Tamaño del logo aumentado */
+    margin-bottom: 20px; /* Espacio entre el logo y el mensaje */
+}
+
+/* Estilo para pantallas pequeñas */
+@media (max-width: 576px) {
+    .welcome-message {
+        text-align: center; /* Centrar el texto en pantallas pequeñas */
+        margin-top: 40px; /* Margen superior en pantallas pequeñas */
+    }
+
+    .login-card {
+        margin: 0 auto; /* Centramos la tarjeta en pantallas pequeñas */
+    }
+
+    .login-container {
+        flex-direction: column; /* Apilar elementos en pantallas pequeñas */
+    }
+}
